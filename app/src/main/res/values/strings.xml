@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Cuantas Sabes</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="lorem_instructions">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae lobortis metus. Sed molestie justo at sapien ullamcorper scelerisque. Aenean auctor molestie arcu, non maximus magna malesuada sed. Curabitur a aliquet orci.\n Ut molestie pulvinar ipsum non venenatis. Phasellus finibus nunc eget nunc sodales semper. Aenean condimentum magna ac mi congue mollis. Mauris mattis massa non leo malesuada consequat. Donec in lorem quis lacus pretium molestie sit amet a nunc. Donec ut porttitor libero.
+Maecenas quis facilisis odio, et hendrerit lectus. Quisque vestibulum, mi eget finibus aliquet, mauris felis efficitur ante, eu scelerisque leo nulla vitae odio. Suspendisse vitae fermentum lorem. Sed tincidunt imperdiet purus, aliquam malesuada neque accumsan in. Etiam at mi id nibh viverra vestibulum vel eget quam. Sed mollis, eros nec gravida feugiat.</string>
+    <string name="MPD_action_done">Listo</string>
+    <string name="MPD_action_cancel">Cancelar</string>
+    <string name="MPD_male">M</string>
+    <string name="MPD_female">F</string>
+    <string name="MPD_empty_message">value can not be empty</string>
+    <string name="MPD_incorrect_message">please select correct value</string>
+
+    <string name="vertical_form_stepper_form_continue">Continuar</string>
+    <string name="vertical_form_stepper_form_discard_question">Discard data?</string>
+    <string name="vertical_form_stepper_form_info_will_be_lost">All the information you have given will be lost</string>
+    <string name="vertical_form_stepper_form_discard_cancel">Cancelar</string>
+    <string name="vertical_form_stepper_form_discard">Descartar</string>
+    <string name="vertical_form_stepper_form_confirm_button">Aceptar</string>
+    <string name="vertical_form_stepper_form_last_step">Confirmar</string>
+    <string name="vertical_form_stepper_form_sending_data_message">Sending data…</string>
+    <string name="vertical_form_stepper_form_current_step_uncompleted_alert">Please complete the current field before continue</string>
+
+    <string name="vertical_form_stepper_form_down_previous">down_previous</string>
+    <string name="vertical_form_stepper_form_down_next">down_next</string>
+
+    <!--TIME PICKER RANGE SELECTOR STRINGS-->
+    <string name="mdtp_from">DESDE</string>
+    <string name="mdtp_to">HASTA</string>
+
+    <string name="tab_1">Label 1</string>
+    <string name="tab_2">Label 2</string>
+    <string name="tab_3">Label 3</string>
+    <string name="tab_4">Label 4</string>
+    <string name="tab_5">Label 5</string>
+
+</resources>

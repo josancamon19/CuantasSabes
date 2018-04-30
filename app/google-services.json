@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "570011658733",
+    "firebase_url": "https://cuantas-sabes.firebaseio.com",
+    "project_id": "cuantas-sabes",
+    "storage_bucket": "cuantas-sabes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570011658733:android:dcd408ccea296b3c",
+        "android_client_info": {
+          "package_name": "com.example.santiago.cuantassabes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570011658733-d9bp8hpei2u90190e2gn8vtvnj40hcbp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.santiago.cuantassabes",
+            "certificate_hash": "75b25273b9ac72e9b2ad84fa0bfeefd05c2fe6c0"
+          }
+        },
+        {
+          "client_id": "570011658733-0uabruerr25snibo66b8800u4ale9ksk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQPZP8oNNuLp99FyG-qL9b0lF74qiOhn0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570011658733-0uabruerr25snibo66b8800u4ale9ksk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570011658733:android:8596caed48b04875",
+        "android_client_info": {
+          "package_name": "com.example.santiago.cuantassabesform"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570011658733-eib4ci608gm5p14v03n7aht1c4ov71kc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.santiago.cuantassabesform",
+            "certificate_hash": "75b25273b9ac72e9b2ad84fa0bfeefd05c2fe6c0"
+          }
+        },
+        {
+          "client_id": "570011658733-0uabruerr25snibo66b8800u4ale9ksk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQPZP8oNNuLp99FyG-qL9b0lF74qiOhn0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570011658733-0uabruerr25snibo66b8800u4ale9ksk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
