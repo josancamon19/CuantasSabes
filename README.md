@@ -24,7 +24,7 @@ Creating intents to other apps using stored information.
 
 ## Screens
 
-![screen](../master/images/2.jpeg)   ![screen](../master/images/3.jpeg)
+![screen](../master/images/2.jpg)   ![screen](../master/images/3.jpeg)
 
 ![screen](../master/images/4.jpeg)
 
