@@ -1,4 +1,4 @@
-## CuantasSabes
+## Cuantas Sabes / How many you know
 In my first semester of biomedical engineering at ECI 'Julio Garavito', I must develop a project which solves a problem in the medical world, due to my previous knowledge in android development I decided to build this app 'How Many you know.'
 
 Is an app to help speech therapist with the semantic awareness and interpretation of the world things in children with less than 12 years old.
