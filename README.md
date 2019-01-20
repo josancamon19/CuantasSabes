@@ -3,6 +3,8 @@ In my first semester of biomedical engineering at ECI 'Julio Garavito', I must d
 
 Is an app to help speech therapist with the semantic awareness and interpretation of the world things in children with less than 12 years old.
 
+All the images were reviewed and provided by a speech therapist specialized with children.
+
 ## Project Overview
 In this project the user can register as a doctor who will provide the app to their patients, so the user can register as a patient too.
 The doctor will be able to:
@@ -22,8 +24,7 @@ The easiest way to get the children voice was with the Google API, probably out 
 ![screen](../master/images/5.jpg)   ![screen](../master/images/6.jpg)     ![screen](../master/images/7.jpg)
 
 ## Contributions
-I hope you everyone of you love this project also how I loved to developed, unfortuntely I got busy then of classes and I haven't contributed to it more.
-
+I hope everyone of you contribute to complete this great idea.
 
 ## License
 
