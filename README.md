@@ -4,10 +4,10 @@ In my first semester of biomedical engineering at ECI 'Julio Garavito', I must d
 Is an app to help speech therapist with the semantic awareness and interpretation of the world things in children with less than 12 years old.
 
 ## Project Overview
-
-
-## Why this project?
-
+In this project the user can register as a doctor who will provide the app to their patients, so the user can register as a patient too.
+The doctor will be able to:
+-   get information about their patients
+-   get information about the quizes realized by their patients to support their diagnosis.
 
 ## How I did it?
 This project was built in Java and XML. I used so many libraries to give an easy way to pick things and fill the formulary.
@@ -20,6 +20,9 @@ The easiest way to get the children voice was with the Google API, probably out 
 ![screen](../master/images/2.jpg)   ![screen](../master/images/3.jpg)     ![screen](../master/images/4..jpg)
 
 ![screen](../master/images/5.jpg)   ![screen](../master/images/6.jpg)     ![screen](../master/images/7.jpg)
+
+## Contributions
+I hope you everyone of you love this project also how I loved to developed, unfortuntely I got busy then of classes and I haven't contributed to it more.
 
 
 ## License
