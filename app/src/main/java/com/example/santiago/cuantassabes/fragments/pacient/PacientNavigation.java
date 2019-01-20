@@ -1,5 +1,6 @@
 package com.example.santiago.cuantassabes.fragments.pacient;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -31,12 +32,8 @@ public class PacientNavigation extends Fragment {
     private static final String TAG = PacientNavigation.class.getSimpleName();
     @BindView(R.id.bottom_navigation)
     AHBottomNavigation bottomNavigation;
-    private List<Category> categoryLists;
     private String pacientAge;
 
-    private FirebaseDatabase mFirebaseDatabase;
-    private DatabaseReference mDatabaseReference;
-    private ChildEventListener mChildEventListener;
 
     private String mUsername;
 
@@ -45,30 +42,28 @@ public class PacientNavigation extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_pacient_navigation, container, false);
         ButterKnife.bind(this, rootView);
-        categoryLists = new ArrayList<>();
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mDatabaseReference = mFirebaseDatabase.getReference().child("edades").child(pacientAge);
-
-        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_1, R.drawable.ic_apps_black_24dp, R.color.color_tab_1);
-        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.drawable.ic_maps_local_attraction, R.color.color_tab_2);
-        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.ic_maps_local_restaurant, R.color.color_tab_3);
+        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_1, R.drawable.ic_practice, R.color.color_tab_1);
+        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.drawable.ic_quiz, R.color.color_tab_2);
+        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.ic_user, R.color.color_tab_3);
 
         bottomNavigation.addItem(item1);
         bottomNavigation.addItem(item2);
         bottomNavigation.addItem(item3);
         bottomNavigation.setTitleState(AHBottomNavigation.TitleState.SHOW_WHEN_ACTIVE);
+        bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#FEFEFE"));
 
         bottomNavigation.setForceTint(true);
         bottomNavigation.setTranslucentNavigationEnabled(true);
         bottomNavigation.setColored(true);
-        bottomNavigation.setAccentColor(R.color.accent);
+        bottomNavigation.setAccentColor(Color.parseColor("#FFC107"));
+        bottomNavigation.setInactiveColor(Color.parseColor("#FFFFFF"));
         bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
             @Override
             public boolean onTabSelected(int position, boolean wasSelected) {
                 switch (position) {
                     case 0:
                         ImagesList profileFragment = new ImagesList();
-                        profileFragment.setData("2-4","Animales");
+                        profileFragment.setData("2-4");
                         getFragmentManager().beginTransaction().replace(R.id.container_fragments, profileFragment).commit();
                         break;
                     case 1:
@@ -85,60 +80,10 @@ public class PacientNavigation extends Fragment {
                 return true;
             }
         });
-        attachDatabaseReadListener();
+        bottomNavigation.setCurrentItem(0);
         return rootView;
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        detachDatabaseReadListener();
-    }
-
-    private void attachDatabaseReadListener() {
-        if (mChildEventListener == null) {
-            mChildEventListener = new ChildEventListener() {
-                @Override
-                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                    String categoria = dataSnapshot.getKey();
-                    String categoryUrl = "";
-                    Iterator<DataSnapshot> iteratorImages = dataSnapshot.getChildren().iterator();
-                    DataSnapshot images = iteratorImages.next();
-                    Image imageForUrl = images.getValue(Image.class);
-                    if (imageForUrl != null) {
-                        categoryUrl = imageForUrl.getPhotoUrl();
-                    }
-                    Category categoryToAdd = new Category(pacientAge, categoria, categoryUrl);
-                    categoryLists.add(categoryToAdd);
-                    bottomNavigation.setCurrentItem(0);
-                }
-
-                @Override
-                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                }
-
-                @Override
-                public void onChildRemoved(DataSnapshot dataSnapshot) {
-                }
-
-                @Override
-                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                }
-            };
-            mDatabaseReference.addChildEventListener(mChildEventListener);
-        }
-    }
-
-    private void detachDatabaseReadListener() {
-        if (mChildEventListener != null) {
-            mDatabaseReference.removeEventListener(mChildEventListener);
-            mChildEventListener = null;
-        }
-    }
 
     public void setAge(String pacientAge) {
         int age = Integer.valueOf(pacientAge);

@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -92,12 +93,12 @@ public class LoginActivity extends AppCompatActivity implements VerticalStepperF
                     final String username = user.getDisplayName();
                     onSignedInInitialize(id, username, userEmail);
                     boolean exist =checkUserLogin(username);
-                    if (exist){
+                    /*if (exist){
                         Intent intent = new Intent(LoginActivity.this,PacientActivity.class);
                         intent.putExtra("age","3");
                         intent.putExtra("username",username);
                         startActivity(intent);
-                    }
+                    }*/
                     // User is signed in
                 } else {
                     // User is signed out
@@ -108,9 +109,10 @@ public class LoginActivity extends AppCompatActivity implements VerticalStepperF
                                     .setIsSmartLockEnabled(false, true)
                                     .setAvailableProviders(Arrays.asList(
                                             new AuthUI.IdpConfig.EmailBuilder().build(),
+                                            new AuthUI.IdpConfig.FacebookBuilder().build(),
                                             new AuthUI.IdpConfig.GoogleBuilder().build()))
-                                    .setLogo(R.drawable.logodefault)
-                                    .setTheme(R.style.GreenTheme)
+                                    .setLogo(R.drawable.log_216)
+                                    .setTheme(R.style.Theme_AppCompat_Light_NoActionBar)
                                     .build(),
                             RC_SIGN_IN);
                 }

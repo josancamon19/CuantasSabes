@@ -1,5 +1,6 @@
 package com.example.santiago.cuantassabes.fragments.pacient;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.santiago.cuantassabes.QuizActivity;
 import com.example.santiago.cuantassabes.R;
 
 import butterknife.BindView;
@@ -25,7 +27,9 @@ public class QuizIntroduction extends Fragment {
         buttonStartQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getActivity(), QuizActivity.class);
+                intent.putExtra("age","2-4-01");
+                startActivity(intent);
             }
         });
         return rootView;

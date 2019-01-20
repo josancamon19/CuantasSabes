@@ -17,7 +17,7 @@ public class ImagesActivity extends AppCompatActivity {
         String category = intent.getStringExtra("name");
 
         ImagesList imagesList = new ImagesList();
-        imagesList.setData(age,category);
+        imagesList.setData(age);
         getSupportFragmentManager().beginTransaction().add(R.id.images_container, imagesList).commit();
     }
 }

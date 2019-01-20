@@ -1,5 +1,7 @@
 package com.example.santiago.cuantassabes.fragments.pacient;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
@@ -14,9 +16,9 @@ import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 import com.example.santiago.cuantassabes.PacientActivity;
-import com.example.santiago.cuantassabes.ui.MyImageSwitcher;
 import com.example.santiago.cuantassabes.R;
 import com.example.santiago.cuantassabes.model.Image;
+import com.example.santiago.cuantassabes.ui.MyImageSwitcher;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -88,6 +90,7 @@ public class Quiz extends Fragment {
             }
         });
         attachDatabaseReadListener();
+
         return rootView;
     }
 
@@ -99,7 +102,7 @@ public class Quiz extends Fragment {
                 if (resultCode == RESULT_OK && data != null) {
                     if (imagesQuiz != null && !imagesQuiz.isEmpty()) {
                         ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                        String word_listened = unaccent(result.get(0));
+                        String word_listened = unaccent(result.get(0).trim().toLowerCase());
                         List<String> correct_word = imagesQuiz.get(imageSwitcherIndex - 1).getAnswers();
                         if (correct_word.contains(word_listened)) {
                             Toast.makeText(getContext(), "respuesta correcta", Toast.LENGTH_SHORT).show();
@@ -112,8 +115,18 @@ public class Quiz extends Fragment {
                             imageSwitcher.setImageUrl(imagesQuiz.get(imageSwitcherIndex - 1).getPhotoUrl());
                         } else {
                             Toast.makeText(getContext(), "Tu puntaje fue " + score + "/" + imagesQuiz.size(), Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getContext(), PacientActivity.class);
-                            startActivity(intent);
+                            AlertDialog alertDialog = new AlertDialog.Builder(getContext())
+                                    .setCancelable(false)
+                                    .setMessage("Felicidades tu puntaje fue = "+ score + " de "+ imagesQuiz.size()).
+                                            setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    Intent intent = new Intent(getContext(), PacientActivity.class);
+                                                    intent.putExtra("age","3");
+                                                    startActivity(intent);
+                                                }
+                                            }).create();
+                            alertDialog.show();
                         }
                     }
                 }
@@ -139,7 +152,7 @@ public class Quiz extends Fragment {
                         imageList.add(image);
                     }
                     Random random = new Random();
-                    int imagesForQuiz = 0;
+                    int imagesForQuiz;
                     if (imageList.size()<2){
                         imagesForQuiz = 1;
                     }else {
@@ -181,7 +194,7 @@ public class Quiz extends Fragment {
     }
 
     public void setData(String age) {
-        this.age = age;
+        this.age = "2-4";
     }
 
     public static String unaccent(String stringReceived) {

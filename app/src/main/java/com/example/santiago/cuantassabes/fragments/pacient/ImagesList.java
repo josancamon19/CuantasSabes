@@ -5,9 +5,11 @@ import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,11 +56,13 @@ public class ImagesList extends Fragment implements RecyclerImagesAdapter.OnImag
         View rootView = inflater.inflate(R.layout.fragment_images_list, container, false);
         ButterKnife.bind(this, rootView);
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mDatabaseReference = mFirebaseDatabase.getReference().child("edades").child(age).child(category);
+        mDatabaseReference = mFirebaseDatabase.getReference().child("edades").child(age);
         recyclerImagesAdapter = new RecyclerImagesAdapter(getContext(), this);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        StaggeredGridLayoutManager gridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setHasFixedSize(true);
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.HORIZONTAL));
         recyclerView.setAdapter(recyclerImagesAdapter);
         attachDatabaseReadListener();
         return rootView;
@@ -77,8 +81,12 @@ public class ImagesList extends Fragment implements RecyclerImagesAdapter.OnImag
             mChildEventListener = new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                    Image image = dataSnapshot.getValue(Image.class);
-                    imageList.add(image);
+                    Iterator<DataSnapshot> categories = dataSnapshot.getChildren().iterator();
+                    while (categories.hasNext()) {
+                        DataSnapshot ds = categories.next();
+                        Image image = ds.getValue(Image.class);
+                        imageList.add(image);
+                    }
                     recyclerImagesAdapter.setData(imageList);
                 }
 
@@ -109,9 +117,8 @@ public class ImagesList extends Fragment implements RecyclerImagesAdapter.OnImag
         }
     }
 
-    public void setData(String age, String category) {
+    public void setData(String age) {
         this.age = age;
-        this.category = category;
     }
 
     @Override

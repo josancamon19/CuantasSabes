@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.ic_test.runner.AndroidJUnitRunner"
+        resConfigs "es"
     }
     buildTypes {
         release {
@@ -22,8 +23,9 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.ic_test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.ic_test.espresso:espresso-core:3.0.1'
+
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     //my libs
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
@@ -49,6 +51,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:12.0.1'
     implementation 'com.firebaseui:firebase-ui-auth:3.3.0'
     implementation 'com.google.firebase:firebase-storage:12.0.1'
+    implementation('com.facebook.android:facebook-android-sdk:4.27.0')
 
 }
 apply plugin: 'com.google.gms.google-services'
