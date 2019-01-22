@@ -12,7 +12,7 @@ The doctor will be able to:
 -   get information about the quizes realized by their patients to support their diagnosis.
 
 ## How I did it?
-This project was built in Java and XML. I used so many libraries to give an easy way to pick things and fill the formulary.
+This project was built in Java and XML. I used so many third-party libraries to give an easy way to pick things, add a more natural way to navigate throughout the app and to improve the formulary fields.
 
 Firebase often is the best way, with firebase I used the firebase Auth (Google, Email, and Facebook) Firebase Database and Firebase Storage to keep all the images needed for the practice of everyone based on their age.
 The easiest way to get the children voice was with the Google API, probably out there are better ways, but taking into account time and money, it was the best option.
@@ -22,9 +22,6 @@ The easiest way to get the children voice was with the Google API, probably out 
 ![screen](../master/images/2.jpg)   ![screen](../master/images/3.jpg)     ![screen](../master/images/4..jpg)
 
 ![screen](../master/images/5.jpg)   ![screen](../master/images/6.jpg)     ![screen](../master/images/7.jpg)
-
-## Contributions
-I hope everyone of you contribute to complete this great idea.
 
 ## License
 
