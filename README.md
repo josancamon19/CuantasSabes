@@ -17,6 +17,8 @@ This project was built in Java and XML. I used so many third-party libraries to 
 Firebase often is the best way, with firebase I used the firebase Auth (Google, Email, and Facebook) Firebase Database and Firebase Storage to keep all the images needed for the practice of everyone based on their age.
 The easiest way to get the children voice was with the Google API, probably out there are better ways, but taking into account time and money, it was the best option.
 
+I treaded the results of the Google voice API beautifully, because the app needs to know if the child know what the image is (the semantic part), so I decided to play with the app with a few kids before the presentation, seeing a lot of possibilities for each word, like if I show them a car, they can say 'run run', 'toy', or so many others. So the app takes care of it and takes care of the possible results by the Google API.
+
 ## Screens
 
 ![screen](../master/images/2.jpg)   ![screen](../master/images/3.jpg)     ![screen](../master/images/4..jpg)
